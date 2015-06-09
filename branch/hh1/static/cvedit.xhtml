@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+
+    <head>
+        <title>Recruitment agency</title>
+        
+        <script type = "text/javascript" src = "jquery-1.7.2.min.js"/>
+        <script type = "text/javascript" src = "jquery-ui-1.8.21.custom.min.js"/>
+
+        <script type = "text/javascript" src = "cvedit.js"/>
+        
+        <link type="text/css" href="redmond/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
+
+        <style>
+            body {
+                font: 62.5% "Trebuchet MS", sans-serif;
+                margin: 50px;
+            }
+
+            h2 {
+                margin: 5px 0px;
+            }
+
+            th {
+                border-bottom: 1px solid;
+                text-align: left;
+                padding-right: 10px;
+            }
+            
+            td {
+                text-align: left;
+                padding-right: 10px;
+            }
+            
+            .hidden {
+                display: none;
+            }
+
+            label {
+                 display: block;
+            }
+
+            input[type=text] {
+                margin: 0 0 5px 0;
+                display: block;
+            }
+
+            #left_panel {
+                float: left;
+                max-width: 260px;
+            }
+
+            #right_panel {
+                padding-left: 270px;
+            }
+
+            #unauthorized_user_panel, #authorized_user_panel {
+                margin: 0 9px 6px 9px;
+            }
+
+            #user_e_mail {
+                display: block;
+                margin-bottom: 6px;
+                padding: 6px 10px;
+                text-decoration: none;
+            }
+
+            #search_panel_caption {
+                margin: 5px 0;
+                padding: 3px 10px;
+            }
+
+            .title {
+                cursor: pointer;
+                background: #eee;
+                border-top: #ccc solid 1px;
+            }
+            .inner {
+                border-top: #ccc solid 1px;
+            }​            
+        </style>
+    </head>
+
+    <body>
+
+        <form id = "register_form" title="Input your e-mail and password">
+            <label for = "nm_input">Name</label>
+            <input type = "text" id = "nm_input" class = "ui-widget-content ui-corner-all" />
+            
+            <label for = "snm_input">Surname</label>
+            <input type = "text" id = "snm_input" class = "ui-widget-content ui-corner-all" />
+           
+            <label for = "tnm_input">Thirdname</label>
+            <input type = "text" id = "tnm_input" class = "ui-widget-content ui-corner-all" />
+            
+            <label for = "birthday_input">Birthday</label>
+            <input type = "text"  readonly="true" id = "birthday_input" class = "ui-widget-content ui-corner-all" />
+        
+            <label for = "e_mail_input">E-Mail</label>
+            <input type = "text" id = "e_mail_input" class = "ui-widget-content ui-corner-all" />
+            
+            <label for = "password_input">Password</label>
+            <input type = "text" id = "password_input" class = "ui-widget-content ui-corner-all" />
+
+        </form>
+        
+        <form id = "login_form" title="Input your e-mail and password">
+
+            <label for = "login_input">E-Mail</label>
+            <input type = "text" id = "login_input" class = "ui-widget-content ui-corner-all" />
+            
+            <label for = "pass_input">Password</label>
+            <input type = "text" id = "pass_input" class = "ui-widget-content ui-corner-all" />
+
+        </form>
+
+        <div id = "left_panel">
+
+        <form>
+            <div id = "unauthorized_user_panel" class = "hidden ui-widget-container ui-corner-all">
+                <input id = "login" type = "button" value = "Log In" />
+                <input id = "register" type = "button" value = "Register" />
+            </div>
+            
+            <div id = "authorized_user_panel" class = "hidden ui-widget-container ui-corner-all">
+            <table>
+                <tr>
+                    <td>
+                        <div><a id = "user_full_name" style='width:100%' class = "ui-widget-header ui-corner-all" href = "#"/></div>
+                        <div><a id = "logout" style='width:100%'  href = "#">Log Out</a></div>
+                        
+                        <fieldset class = "ui-widget-container ui-corner-all" >
+                            <div><input type = "button" id = "input_edu" style='width:100%' value = "Редактировать данные о себе" class = "ui-widget-content ui-corner-all" /></div>
+                            <div><input type = "button" id = "create_cv" style='width:100%' value = "Резюме" class = "ui-widget-content ui-corner-all" /></div>
+                            <div><input type = "button" id = "show_pos" style='width:100%' value = "Показать вакансии" class = "ui-widget-content ui-corner-all" /></div>
+                        </fieldset>    
+                    </td>
+                </tr>
+            </table>                
+            </div>
+
+        </form>
+        
+
+      <!--  <form>
+        <fieldset class = "ui-widget-container ui-corner-all">
+
+            <div id = "search_panel_caption" class = "ui-widget-header ui-corner-all">Hall Search</div>
+
+            <label for = "date_input">Date</label>
+            <input type = "text" id = "date_input" class = "ui-widget-content ui-corner-all" />
+            
+            <label for = "capacity_input">Capacity</label>
+            <input type = "text" id = "capacity_input" class = "ui-widget-content ui-corner-all" />
+
+            <label for = "location_input">Location</label>
+            <input type = "text" id = "location_input" class = "ui-widget-content ui-corner-all" />
+
+            <input id = "search" type = "button" value = "Search" />
+        </fieldset>
+        </form>-->
+
+        </div>
+
+        <div id = "right_panel">
+
+        <h1>Кадровое агентство</h1>
+        <h2>Инструкция по использованию сайта:</h2>        
+        <font size="2">
+            <ol>
+            <li>Зарегистрируйтесь и/или залогиньтесь: в качестве логина используйте почту для дальнейшей связи с работодателями</li>
+            <li>Выберите пункт <b>Редактировать данные о себе</b>, чтобы внести данные/изменения о своем образовании</li>
+            <li>Выберите пункт <b>Резюме</b>, чтобы создать/добавить/изменить резюме</li>
+            <li>После нажатия кнопки <b>Сохранить/Обновить резюме</b> данные будут не только сохранены но и отправлены вместе с данными об образовании отраслевой организации, после чего список вакансий будет автоматически изменен</li>    
+            <li>Выберите пункт <b>Показать вакансии</b> для просмотра/отклика на вакансии</li>                       
+            </ol>
+        </font>
+        <div id = "education" class = "hidden">
+            Данные об образовании
+            <fieldset class = "ui-widget-container ui-corner-all">
+                <div class="dynamic-form ui-widget-content ui-state-active">
+                    <input id = "add_univ" type = "button" value = "Добавить университет" />
+                    <hr />
+                    <form>
+                        <div class="inputs_univ">
+                        </div>
+                        <div class="hidden" id="rm_u_button">
+                            <input id = "remove_univ" type = "button" value = "Удалить университет"  />
+                        </div>
+                    </form>
+                </div>
+                <br></br>
+                <div class="dynamic-form ui-widget-content ui-state-active">
+                    <input id = "add_lang" type = "button" value = "Добавить язык" />
+                    <hr />
+                    <form>
+                        <div class="inputs_lang">
+                        </div>
+                        <div class="hidden" id="rm_l_button">
+                            <input id = "remove_lang" type = "button" value = "Удалить язык"  />
+                        </div>
+                    </form>
+                </div>
+            </fieldset> 
+            <input id = "save_ei" type = "button" value = "Сохранить" />
+        </div>
+        <div id = "add_resume" class = "hidden">
+            Оформление резюме
+            <fieldset class = "ui-widget-container ui-corner-all">
+                <div class="dynamic-form ui-widget-content ui-state-active">
+                    <input id = "add_new_resume" type = "button" value = "Добавить резюме" />
+                    <hr />
+                    <form>
+                        <div class="inputs_resume">
+                       <!--     <div class="title">Foo bar</div>
+                            <div class="inner">Lorem ipsum dolor sit amet, consectepture adipisicing elit, sed do eiusmod.</div>-->
+                        </div>
+                        <div class="hidden" id="rm_r_button">
+                            <input id = "remove_resume" type = "button" value = "Удалить резюме"  />
+                        </div>
+                    </form>
+                </div>
+            </fieldset>
+            <input id = "save_cv" type = "button" value = "Сохранить/Обновить резюме" />    
+        </div>      
+        <div id = "positions" class = "hidden">
+            Подходящие вакансии
+            <fieldset class = "ui-widget-container ui-corner-all">
+                <form>
+                    <div class="inputs_pos">
+                    </div>
+                </form>
+            </fieldset>    
+        </div>              
+        <!--<div id = "result" class = "hidden">
+            <h2>Search Results</h2>
+            <table id = "result_table" >
+                <tr>
+                    <th>Conference Hall</th>
+                    <th>Capacity</th>
+                    <th>Address</th>
+                </tr>
+            </table>
+        </div>
+
+        <div id = "user_reservations" class = "hidden">
+            <h2>My Reservations</h2>
+            <table id = "reservation_table" >
+                <tr>
+                    <th>Conference Hall</th>
+                    <th>Address</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </table>
+        </div>-->
+
+        </div>
+
+    </body>
+
+</html>

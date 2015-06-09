@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+
+    <head>
+        <title>Company</title>
+        
+        <script type = "text/javascript" src = "jquery-1.7.2.min.js"/>
+        <script type = "text/javascript" src = "jquery-ui-1.8.21.custom.min.js"/>
+
+        <script type = "text/javascript" src = "posedit.js"/>
+        
+        <link type="text/css" href="redmond/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
+
+        <style>
+            body {
+                font: 62.5% "Trebuchet MS", sans-serif;
+                margin: 50px;
+            }
+
+            h2 {
+                margin: 5px 0px;
+            }
+
+            th {
+                border-bottom: 1px solid;
+                text-align: left;
+                padding-right: 10px;
+            }
+            
+            td {
+                text-align: left;
+                padding-right: 10px;
+            }
+            
+            .hidden {
+                display: none;
+            }
+
+            label {
+                 display: block;
+            }
+
+            input[type=text] {
+                margin: 0 0 5px 0;
+                display: block;
+            }
+
+            #left_panel {
+                float: left;
+                max-width: 260px;
+            }
+
+            #right_panel {
+                padding-left: 270px;
+            }
+
+            .title {
+                cursor: pointer;
+                background: #eee;
+                border-top: #ccc solid 1px;
+            }
+            .inner {
+                border-top: #ccc solid 1px;
+            }​            
+        </style>
+    </head>
+
+    <body>
+
+        <div id = "left_panel">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <fieldset class = "ui-widget-container ui-corner-all" >
+                            <div><input type = "button" id = "input_info" style='width:100%' value = "Редактор информации о компании" class = "ui-widget-content ui-corner-all" /></div>
+                            <div><input type = "button" id = "create_pos" style='width:100%' value = "Редактор вакансий" class = "ui-widget-content ui-corner-all" /></div>
+                            <div><input type = "button" id = "show_resm" style='width:100%' value = "Возможные кандидаты" class = "ui-widget-content ui-corner-all" /></div>                            
+                        </fieldset>    
+                    </td>
+                </tr>
+            </table>                
+        </form>
+        </div>
+
+        <div id = "right_panel">
+            <h1>Company</h1>
+            <p id = "tip_text">
+                Please, select action in the left menu
+            </p>
+            <div id = "add_info" class = "hidden">
+                Данные об компании
+                <fieldset class = "ui-widget-container ui-corner-all">
+                    <label for = "fdate">Год основания</label>
+                    <input type = "text" readonly="true" id = "fdate" class = "ui-widget-content ui-corner-all" /><hr />
+                    <label for = "info">О компании</label>
+                    <textarea rows="4" cols="40" class = "ui-widget-content ui-corner-all" id="info"></textarea>      
+                </fieldset> 
+                <input id = "save_info" type = "button" value = "Сохранить" />
+            </div>
+
+            <div id = "add_pos" class = "hidden">
+                Редактор вакансий
+                <fieldset class = "ui-widget-container ui-corner-all">
+                    <div class="dynamic-form ui-widget-content ui-state-active" align="center">
+                        <input id = "add_new_pos" type = "button" value = "Добавить вакансию" style="width:70%;" />
+                        <hr /><hr color="white" size="20" /><hr />
+                        <form>
+                            <div class="inputs_pos">
+                            </div>
+                        </form>
+                    </div>
+                </fieldset> 
+            </div>    
+
+            <div id = "resumes" class = "hidden">
+                Откликнувшиеся кандидаты
+                <fieldset class = "ui-widget-container ui-corner-all">
+                    <form>
+                        <div class="inputs_resm">
+                        </div>
+                    </form>
+                </fieldset> 
+            </div>               
+        </div>
+
+    </body>
+
+</html>

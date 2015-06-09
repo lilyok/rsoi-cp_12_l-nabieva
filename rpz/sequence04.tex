@@ -1,0 +1,16 @@
+\begin{sequencediagram}
+	\newthread{agency}{Экскурсионное бюро}
+
+	% Первый параметр -- отступ. Что-то автоматически он не хлочет выравнивать
+	\newthread{culture}{Организация культуры}
+
+	\newthread{carrier}{Транспортная компания}  
+    
+	\begin{sdloop}{Цикл кэширования}
+		\begin{call}{agency}{Запрос экскурсий и количества  билетов}{culture}{Расписание и количество билетов}
+		\end{call}
+		\begin{call}{agency}{Запрос рейсов и количества билетов}{carrier}{Расписание и количество билетов}
+		\end{call}
+	\end{sdloop}
+	
+\end{sequencediagram}
